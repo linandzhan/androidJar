@@ -26,11 +26,6 @@ public class MainActivity extends BaseSkinActivity {
 
     @Override
     protected void initData() {
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED
-//                || ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-//            ActivityCompat.requestPermissions(this,new String[]{ Manifest.permission.READ_EXTERNAL_STORAGE,
-//                    Manifest.permission.WRITE_EXTERNAL_STORAGE},MY_PERMISSIONS_REQUEST_WRITE_STORE);
-//        }
         PermissionHelper.requestPermission(this,0,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE});
     }
 
@@ -61,9 +56,6 @@ public class MainActivity extends BaseSkinActivity {
             ArrayList<ImageEntity> imageEntities = data.getParcelableArrayListExtra(ImageSelector.EXTRA_RESULT);
             ImageEntity imageEntity = imageEntities.get(0);
             Log.i(TAG, "onActivityResult: " + imageEntity);
-//            for (ImageEntity imageEntity : imageEntities) {
-//                Log.i(TAG, "onActivityResult: " + imageEntity);
-//            }
         }
     }
 }
